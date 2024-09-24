@@ -2,7 +2,19 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 3.7.0"
+      version = ">= 3.7.1"
+    }
+    azapi = {
+      source = "azure/azapi"
+      version = "2.0.0-beta"
+    }
+    modtm = {
+      source = "Azure/modtm"
+      version = "0.3.2"
+    }
+     random = {
+      source = "hashicorp/random"
+      version = "3.6.3"
     }
   }
 
@@ -21,3 +33,13 @@ provider "azurerm" {
   use_oidc = true
 }
 
+provider "azapi" {
+}
+
+provider "modtm" {
+  # Configuration options
+}
+
+provider "random" {
+  # Configuration options
+}
