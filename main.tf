@@ -12,7 +12,7 @@ terraform {
       source = "Azure/modtm"
       version = "0.3.2"
     }
-     random = {
+    random = {
       source = "hashicorp/random"
       version = "3.6.3"
     }
@@ -34,6 +34,7 @@ provider "azurerm" {
 }
 
 provider "azapi" {
+  use_oidc  = true
 }
 
 provider "modtm" {
