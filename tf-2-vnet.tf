@@ -16,7 +16,7 @@ resource "azurerm_subnet" "gatewaysubnet" {
 }
 
 resource "azurerm_subnet" "firewallsubnet" {
-  name                 = "AzureFirewallSubnet-subnet"
+  name                 = "AzureFirewallSubnet"
   resource_group_name  = azurerm_resource_group.rghubnetworking.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.2.0/24"]
@@ -32,7 +32,6 @@ resource "azurerm_subnet_network_security_group_association" "gw-subnet-ass" {
   subnet_id                 = azurerm_subnet.gatewaysubnet.id
   network_security_group_id = azurerm_network_security_group.gw-subnet-nsg.id
 }
-
 
 
 resource "azurerm_network_security_group" "fw-subnet-nsg" {
