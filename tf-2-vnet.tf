@@ -28,7 +28,7 @@ resource "azurerm_network_security_group" "gw-subnet-nsg" {
   resource_group_name = azurerm_resource_group.rghubnetworking.name
 }
 
-r
+
 
 
 resource "azurerm_network_security_group" "fw-subnet-nsg" {
