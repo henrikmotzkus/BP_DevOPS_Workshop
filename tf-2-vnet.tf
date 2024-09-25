@@ -22,7 +22,6 @@ resource "azurerm_subnet" "firewallsubnet" {
   address_prefixes     = ["10.0.2.0/24"]
 }
 
-
 resource "azurerm_network_security_group" "gw-subnet-nsg" {
   name                = "nsg-gw-subnet"
   location            = azurerm_resource_group.rghubnetworking.location
@@ -34,6 +33,8 @@ resource "azurerm_subnet_network_security_group_association" "gw-subnet-ass" {
   network_security_group_id = azurerm_network_security_group.gw-subnet-nsg.id
 }
 
+
+
 resource "azurerm_network_security_group" "fw-subnet-nsg" {
   name                = "nsg-fw-subnet"
   location            = azurerm_resource_group.rghubnetworking.location
@@ -41,6 +42,6 @@ resource "azurerm_network_security_group" "fw-subnet-nsg" {
 }
 
 resource "azurerm_subnet_network_security_group_association" "fw-subnet-ass" {
-  subnet_id                 = azurerm_subnet.firewallsubnet
+  subnet_id                 = azurerm_subnet.firewallsubnet.id
   network_security_group_id = azurerm_network_security_group.fw-subnet-nsg.id
 }
