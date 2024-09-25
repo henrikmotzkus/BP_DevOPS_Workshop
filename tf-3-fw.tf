@@ -18,11 +18,20 @@ resource "azurerm_firewall" "fw" {
     subnet_id            = azurerm_subnet.firewallsubnet.id
     public_ip_address_id = azurerm_public_ip.fwpubip.id
   }
+
+  firewall_policy_id = azurerm_firewall_policy.fwpolicy.id
+
+  threat_intel_mode = "Deny"
+
+
 }
 
 
 resource "azurerm_firewall_policy" "fwpolicy" {
-  name                = "example-policy"
+  name                = "fwpolicy"
   resource_group_name = azurerm_resource_group.rghubnetworking.name
   location            = azurerm_resource_group.rghubnetworking.location
+  intrusion_detection {
+    mode = "Deny"
+  }
 }
