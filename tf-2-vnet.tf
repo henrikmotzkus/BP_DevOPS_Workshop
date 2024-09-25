@@ -44,3 +44,34 @@ resource "azurerm_subnet_network_security_group_association" "fw-subnet-ass" {
   subnet_id                 = azurerm_subnet.firewallsubnet.id
   network_security_group_id = azurerm_network_security_group.fw-subnet-nsg.id
 }
+
+resource "azurerm_network_security_rule" "rule-1-gw" {
+  name                        = "rule1"
+  priority                    = 100
+  direction                   = "Outbound"
+  access                      = "Allow"
+  protocol                    = "*"
+  source_port_range           = "*"
+  destination_port_range      = "*"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  description                 = "Allow all for test"
+  resource_group_name         = azurerm_resource_group.rghubnetworking.name
+  network_security_group_name = azurerm_network_security_group.gw-subnet-nsg.name
+}
+
+
+resource "azurerm_network_security_rule" "rule-1-fw" {
+  name                        = "rule1"
+  priority                    = 100
+  direction                   = "Outbound"
+  access                      = "Allow"
+  protocol                    = "*"
+  source_port_range           = "*"
+  destination_port_range      = "*"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  description                 = "Allow all for test"
+  resource_group_name         = azurerm_resource_group.rghubnetworking.name
+  network_security_group_name = azurerm_network_security_group.fw-subnet-nsg.name
+}
