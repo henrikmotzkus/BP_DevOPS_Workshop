@@ -17,6 +17,7 @@ terraform init -backend-config="backend=local"
 
 terraform plan -var-file="dev.tfvars"
 
+Dummy change
 
 2. In the CI/CD pipeline 
 
