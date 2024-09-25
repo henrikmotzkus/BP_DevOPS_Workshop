@@ -13,7 +13,7 @@ git clone
 1. In development: Init the terraform with another backend!. Plan the with devtest.tfvars
 
 
-terraform init -backend-config="main_dev.hcl"
+terraform init -backend-config="backend=local"
 
 terraform plan -var-file="dev.tfvars"
 
