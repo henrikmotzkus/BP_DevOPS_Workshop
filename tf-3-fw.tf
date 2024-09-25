@@ -11,7 +11,7 @@ resource "azurerm_firewall" "fw" {
   location            = azurerm_resource_group.rghubnetworking.location
   resource_group_name = azurerm_resource_group.rghubnetworking.name
   sku_name            = "AZFW_VNet"
-  sku_tier            = "Standard"
+  sku_tier            = "Premium"
 
   ip_configuration {
     name                 = "configuration"

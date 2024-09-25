@@ -28,10 +28,7 @@ resource "azurerm_network_security_group" "gw-subnet-nsg" {
   resource_group_name = azurerm_resource_group.rghubnetworking.name
 }
 
-resource "azurerm_subnet_network_security_group_association" "gw-subnet-ass" {
-  subnet_id                 = azurerm_subnet.gatewaysubnet.id
-  network_security_group_id = azurerm_network_security_group.gw-subnet-nsg.id
-}
+
 
 
 resource "azurerm_network_security_group" "fw-subnet-nsg" {
@@ -40,10 +37,7 @@ resource "azurerm_network_security_group" "fw-subnet-nsg" {
   resource_group_name = azurerm_resource_group.rghubnetworking.name
 }
 
-resource "azurerm_subnet_network_security_group_association" "fw-subnet-ass" {
-  subnet_id                 = azurerm_subnet.firewallsubnet.id
-  network_security_group_id = azurerm_network_security_group.fw-subnet-nsg.id
-}
+
 
 resource "azurerm_network_security_rule" "rule-1-gw" {
   name                        = "rule1"
