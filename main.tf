@@ -2,20 +2,9 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 3.7.1"
+      version = "4.3.0"
     }
-    azapi = {
-      source = "azure/azapi"
-      version = "2.0.0-beta"
-    }
-    modtm = {
-      source = "Azure/modtm"
-      version = "0.3.2"
-    }
-    random = {
-      source = "hashicorp/random"
-      version = "3.6.3"
-    }
+    
   }
 
   # Update this block with the location of your terraform state file
@@ -31,16 +20,5 @@ terraform {
 provider "azurerm" {
   features {}
   use_oidc = true
-}
-
-provider "azapi" {
-  use_oidc  = true
-}
-
-provider "modtm" {
-  # Configuration options
-}
-
-provider "random" {
-  # Configuration options
+  subscription_id = "05e45818-2478-475f-87d8-4c8cf13455c0"
 }
