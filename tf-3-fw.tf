@@ -21,7 +21,7 @@ resource "azurerm_firewall" "fw" {
         subnet_id            = azurerm_subnet.firewallsubnet.id
         public_ip_address_id = azurerm_public_ip.fwpubip.id
     }
-    #firewall_policy_id = azurerm_firewall_policy.fwpolicy.id
+    firewall_policy_id = azurerm_firewall_policy.fwpolicy.id
     tags = var.tags
 }
 
