@@ -30,4 +30,7 @@ resource "azurerm_firewall_policy" "fwpolicy" {
     resource_group_name = azurerm_resource_group.rghubnetworking.name
     location            = azurerm_resource_group.rghubnetworking.location
     sku                 = "Standard"
+    intrusion_detection {
+        mode = "Deny"
+    }
 }
