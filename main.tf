@@ -7,7 +7,7 @@ terraform {
     }
 
     backend "azurerm" {
-        resource_group_name  = "BP_DevOPS-Workshop"
+        resource_group_name  = "RG_BP_TF_State_Prod"
         storage_account_name = "henrikbpdevopsworkshop"
         container_name       = "tfstate"
         key                  = "terraform.tfstate"
