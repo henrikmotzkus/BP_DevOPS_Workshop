@@ -15,10 +15,11 @@ resource "azurerm_firewall" "fw" {
     sku_name            = "AZFW_VNet"
     sku_tier            = "Premium"
     zones               = ["1", "2", "3"]
+    threat_intel_mode = "Deny"
     ip_configuration {
-    name                 = "configuration"
-    subnet_id            = azurerm_subnet.firewallsubnet.id
-    public_ip_address_id = azurerm_public_ip.fwpubip.id
+        name                 = "configuration"
+        subnet_id            = azurerm_subnet.firewallsubnet.id
+        public_ip_address_id = azurerm_public_ip.fwpubip.id
     }
     firewall_policy_id = azurerm_firewall_policy.fwpolicy.id
     tags = var.tags
@@ -28,5 +29,8 @@ resource "azurerm_firewall_policy" "fwpolicy" {
     name                = "fwpolicy"
     resource_group_name = azurerm_resource_group.rghubnetworking.name
     location            = azurerm_resource_group.rghubnetworking.location
-    threat_intelligence_mode = "Alert"
+    sku                 = "Premium"
+    intrusion_detection {
+        mode = "Deny"
+    }
 }
