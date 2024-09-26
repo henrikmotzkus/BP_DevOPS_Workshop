@@ -1,6 +1,6 @@
 variable "resource_group_name" {
     type = string
-    default = "rg-terraform-github-actions"
+    default = "RG_BP_HUB_Vnet_Prod"
 }
 
 variable "location" {
@@ -12,6 +12,7 @@ variable "tags" {
     type = map(string)
     default = {
         deployment = "tf"
+        stage = "prod"
     }
 }
 
