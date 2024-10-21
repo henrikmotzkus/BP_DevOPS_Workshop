@@ -1,0 +1,14 @@
+module "policies" {
+    source = "./modules/policies"
+    resource_group_id = azurerm_resource_group.rghubnetworking.id
+}
+
+
+
+# Policy Governanc
+
+
+# 1. Github Action
+# 2. Event Grid Messaing
+# 3. Im Policy Dashboard
+# 3. Im Azure Monitor

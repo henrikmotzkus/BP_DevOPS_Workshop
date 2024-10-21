@@ -2,6 +2,8 @@
 *.terraform.lock.hcl
 terraform.tfstate
 *_override.tf
-
+*.lock.info
+login.txt
+**/terraform.tfstate.d
 
 

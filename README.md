@@ -1,27 +1,46 @@
 # BP_DevOPS_Workshop
-BP_DevOPS_Workshop
+
+How to develop Azure infra with Terraform, Github and DevOps processes.
+
+
+
+## Prerequisites
+
+1. 2 x Azure Subscription
+2. Github Account and Github project
+3. Configure Github project
+
+## Setup your PC
+
+1. Install VSCode with TF extension
+2. Install Terraform
+3. git clone the project
+
+## The dev process
+
+1. Rename the template to override files. And change settings in the file accordingly.
+2. terraform init 
+3. terraform plan
+4. terraform apply 
+
+## The staging process
 
 
 
 
-# Dev environment
 
-0. Setup
+## The prod CI/CD process 
 
-git clone
+1. Build your infra TF files
+2. Follow the CI/CD process
 
-1. In development: Init the terraform with another backend!. Plan the with devtest.tfvars
+![CICD process](/src/cicd-process.png)
 
 
-terraform init -backend-config="backend=local"
+# Sources
 
-terraform plan -var-file="dev.tfvars"
-
-Dummy change
-
-2. In the CI/CD pipeline 
+https://github.com/Azure-Samples/terraform-github-actions?tab=readme-ov-file
 
 
 
 
-# Test and Prod environment (CI/CD)

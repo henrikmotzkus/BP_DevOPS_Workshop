@@ -14,7 +14,7 @@ resource "azurerm_firewall" "fw" {
     resource_group_name = azurerm_resource_group.rghubnetworking.name
     sku_name            = "AZFW_VNet"
     sku_tier            = "Premium"
-    zones               = ["1", "2", "3"]
+    #zones               = ["1", "2", "3"]
     threat_intel_mode = "Deny"
     ip_configuration {
         name                 = "configuration"

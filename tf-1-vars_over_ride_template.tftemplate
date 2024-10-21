@@ -1,11 +1,6 @@
-variable "subscription_id" {
-    type = string
-    default = "05e45818-2478-475f-87d8-4c8cf13455c0"
-}
-
 variable "resource_group_name" {
     type = string
-    default = "RG_BP_HUB_Vnet_Prod"
+    default = "RG_BP_HUB_Vnet_Dev"
 }
 
 variable "location" {
@@ -17,7 +12,7 @@ variable "tags" {
     type = map(string)
     default = {
         deployment = "tf"
-        stage = "prod"
+        stage = "dev"
     }
 }
 
